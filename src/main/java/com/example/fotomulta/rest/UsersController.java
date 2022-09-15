@@ -33,6 +33,7 @@ public class UsersController {
      return usersRepository.findById(id).map(users -> {
         users.setName(req.getName());
         users.setLastName(req.getLastName());
+
         return  usersRepository.save(users);
      });
     }
