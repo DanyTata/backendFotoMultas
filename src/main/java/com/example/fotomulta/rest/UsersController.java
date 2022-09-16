@@ -21,6 +21,7 @@ public class UsersController {
     }
     @PostMapping("/addUser")
     public Users addUsers(@RequestBody RequestUserDto reqUser){
+        //aqui va user
         Users user = new Users();
         user.setName(reqUser.getName());
         user.setLastName(reqUser.getAddres());
@@ -31,6 +32,7 @@ public class UsersController {
     @PutMapping("/editUser{id}")
     public Optional<Users> editUser(@RequestBody RequestUserDto req, @PathVariable Long id){
      return usersRepository.findById(id).map(users -> {
+         //mañana continuamos aqui...
         users.setName(req.getName());
         users.setLastName(req.getLastName());
 
